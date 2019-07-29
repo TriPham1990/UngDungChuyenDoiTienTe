@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng dụng chuyển đổi tiền tệ</title>
+</head>
+<body>
+Amount
+<label><input type="text" id="nhập"/></label><br>
+From Curency
+<label>
+    <select id="Selec1">
+        <option value="VND">Việt Nam Đồng</option>
+        <option value="USD">USD</option>
+    </select>
+</label><br>
+To From Curency
+<label>
+    <select id="Selec2">
+        <option value="USD">USD</option>
+        <option value="VND">Việt Nam Đồng</option>
+    </select>
+</label><br>
+<p id="hienthi"></p>
+<button type="button" onclick="chuyendoitiente()">Convert</button>
+<script>
+    function chuyendoitiente() {
+        let money = document.getElementById("nhập").value;
+        let currencytype1 = document.getElementById("Selec1").value;
+        let currencytype2 = document.getElementById("Selec2").value;
+        if (currencytype1 === 'USD' && currencytype2 === 'VND') {
+            document.getElementById("hienthi").innerHTML = 'Result:' + money / 23000 + 'VND';
+        } else if (currencytype1 === 'VND' && currencytype2 === 'USD') {
+            document.getElementById("hienthi").innerHTML = 'Result:' + money / 23000 + 'USD';
+        } else if (currencytype1 === 'VND' && currencytype2 === 'VND') {
+            document.getElementById("hienthi").innerHTML = 'Result:' + money + 'VND';
+        } else if (currencytype1 === 'USD' && currencytype2 === 'USD') {
+            document.getElementById("hienthi").innerHTML = 'Result:' + money + 'USD';
+        }
+    }
+</script>
+</body>
+</html>
