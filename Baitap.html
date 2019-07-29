@@ -6,7 +6,7 @@
 </head>
 <body>
 Amount
-<label><input type="text" id="nhập"/></label><br>
+<label><input type="text" id="nhập" placeholder="nhập số tiền"/></label><br>
 From Curency
 <label>
     <select id="Selec1">
@@ -29,7 +29,7 @@ To From Curency
         let currencytype1 = document.getElementById("Selec1").value;
         let currencytype2 = document.getElementById("Selec2").value;
         if (currencytype1 === 'USD' && currencytype2 === 'VND') {
-            document.getElementById("hienthi").innerHTML = 'Result:' + money / 23000 + 'VND';
+            document.getElementById("hienthi").innerHTML = 'Result:' + money * 23000 + 'VND';
         } else if (currencytype1 === 'VND' && currencytype2 === 'USD') {
             document.getElementById("hienthi").innerHTML = 'Result:' + money / 23000 + 'USD';
         } else if (currencytype1 === 'VND' && currencytype2 === 'VND') {
